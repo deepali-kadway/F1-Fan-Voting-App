@@ -7,6 +7,7 @@ const schema = new mongoose.Schema(
         country: String,
         podiums: Number,
         image: String,    
+        votes: {type: Number, default: 0}
     }
 )
 
