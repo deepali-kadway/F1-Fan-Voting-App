@@ -11,3 +11,7 @@ Content-Type: application/json
     "podiums": 18,
     "image": "https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/2025Drivers/piastri"
 }
+
+###
+PUT http://localhost:3002/drivers/684a2983e5f3fb3caf6f408e/vote
+Content-Type: application/json
