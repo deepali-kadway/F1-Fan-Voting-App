@@ -28,5 +28,8 @@ function addVote(driverId) {
     .then(res => res.json())
     .then(() => {
         fetchDrivers()
+        // const message = document.getElementById('message')
+        // message.innerHTML = `<p>Vote added successfully!</p>`
     })
+
 }
