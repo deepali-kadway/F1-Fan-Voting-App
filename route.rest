@@ -18,3 +18,15 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:3002/drivers/684c66846f7fc6e655602496
+
+###
+POST http://localhost:3002/users/register
+Content-Type: application/json
+
+{
+        "fullname": "Deepali Kadway",
+        "contact": "+167876",
+        "email": "d1p@gmail.commm",
+        "username": "d1eepali_k_adway",
+        "password": "dp1@1233"       
+}
