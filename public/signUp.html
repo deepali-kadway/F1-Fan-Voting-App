@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Creation</title>
+    <link rel="stylesheet" href="signUp.css">
+</head>
+<body>
+    <div id="topframe">
+        <img src="https://i0.wp.com/bradspurgeon.com/wp-content/uploads/2014/07/f1-fanzone.jpg?ssl=1" alt="F1 fan zone" id="f1fanlogo">
+        <h1>F1 Fan Favorites Voting</h1>
+        <button type="button" class="sign-in-btn" onclick="navigateToSignIn()">Sign In</button>
+    </div>
+    <h2>Create Account</h2>
+    <form id="sign-up">
+        <label>Full Name: </label>
+        <input type="text" id="fullname" placeholder="Enter your Full Name" required><br><br>
+        <label>Contact: </label>
+        <input type="number" id="contact" placeholder="Enter your Contact" required><br><br>
+        <label>Email: </label>
+        <input type="email" id="email" placeholder="Enter your Email ID" required><br><br>
+        <label>Username: </label>
+        <input type="text" id="username" placeholder="Set your Username" required><br><br>
+        <label>Password: </label>
+        <input type="password" id="userpwd" placeholder="Set your Password" required><br><br>
+        <button type="submit" id="submitbtn" onclick="signUp()">Sign Up</button>
+    </form>
+    <p>Already Have an Account? <a href="signIn.html">SignIn</a></p>
+</body>
+</html>

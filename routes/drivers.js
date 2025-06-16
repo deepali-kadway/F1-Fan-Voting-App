@@ -45,4 +45,20 @@ router.put('/:id/votes', async (req, res) => {
     }
 })
 
+//Deleting a driver from the database. Admin portal usually can do this.
+router.delete('/:id', async (req, res) => {
+    try{
+        const delDriver = await schema.findByIdAndDelete(req.params.id)
+        if(!delDriver){
+            return res.status(404).json({message: 'Driver not found'})
+        }
+        res.json({message: 'Driver Deleted', driver: delDriver})
+    }
+    catch(error)
+    {
+        res.status(400).json({message: error.message})
+    }
+})
+
+
 module.exports = router

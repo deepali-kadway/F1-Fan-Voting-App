@@ -13,5 +13,8 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:3002/drivers/684a2983e5f3fb3caf6f408e/vote
+PUT http://localhost:3002/drivers/684a2983e5f3fb3caf6f408e/votes
 Content-Type: application/json
+
+###
+DELETE http://localhost:3002/drivers/684c66846f7fc6e655602496
