@@ -21,5 +21,7 @@ const driversRoute = require('./routes/drivers');
 app.use('/drivers', driversRoute);
 const usersRoute = require('./routes/users');
 app.use('/users', usersRoute)
+const imageRoute = require('./routes/images')
+app.use('/images', imageRoute)
 
 app.listen(3002, () => console.log('Server is running on port 3002'));
