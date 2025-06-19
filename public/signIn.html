@@ -13,13 +13,14 @@
         <button type="button" class="sign-in-btn" onclick="navigateToSignIn()">Sign In</button>
     </div>
     <h2>Create Account</h2>
-    <form id="sign-in">
+    <form id="sign-in" onsubmit="signIn(event)">
         <label>Username: </label>
-        <input type="text" id="username" placeholder="Enter your Username" required><br><br>
+        <input type="text" id="usernameSignIn" placeholder="Enter your Username" required><br><br>
         <label>Password: </label>
-        <input type="password" id="userpwd" placeholder="Enter your Password" required><br><br>
-        <button type="submit" id="submitbtn" onclick="signIn()">Sign In</button>
+        <input type="password" id="userpwdSignIn" placeholder="Enter your Password" required><br><br>
+        <button type="submit" id="submitbtnSignIn">Sign In</button>
     </form>
     <p>Don't have an account? <a href="signUp.html">Create One</a></p>
+    <script src="usersScript.js"></script>
 </body>
 </html>
