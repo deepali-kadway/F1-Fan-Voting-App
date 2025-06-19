@@ -13,7 +13,7 @@
         <button type="button" class="sign-in-btn" onclick="navigateToSignIn()">Sign In</button>
     </div>
     <h2>Create Account</h2>
-    <form id="sign-up">
+    <form id="sign-up" onsubmit="registration(event)">
         <label>Full Name: </label>
         <input type="text" id="fullname" placeholder="Enter your Full Name" required><br><br>
         <label>Contact: </label>
@@ -24,8 +24,15 @@
         <input type="text" id="username" placeholder="Set your Username" required><br><br>
         <label>Password: </label>
         <input type="password" id="userpwd" placeholder="Set your Password" required><br><br>
-        <button type="submit" id="submitbtn" onclick="signUp()">Sign Up</button>
+        <button type="submit" id="submitbtn">Sign Up</button>
     </form>
     <p>Already Have an Account? <a href="signIn.html">SignIn</a></p>
+    <div id="registerModal" class="modal">
+    <div class="modal-content">
+        <p id="registerModalMessage"></p>
+        <button onclick="closeRegisterModal()">OK</button>
+    </div>
+    </div>
+    <script src="usersScript.js"></script>
 </body>
 </html>
