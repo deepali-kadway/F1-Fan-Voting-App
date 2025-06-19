@@ -13,6 +13,17 @@ router.post('/register', async (req, res) => {
    })
    
     try{
+          // Check if username or email already exists
+        const existingUser = await schema.findOne({
+            $or: [
+                { username: req.body.username },
+                { email: req.body.email }
+            ]
+        });
+        if (existingUser) {
+            return res.status(409).json({ message: 'Username or email already exists' });
+        }
+
         const savedUser = await newUser.save()
         res.status(201).json({message: 'Account Created Successfully'})
     }
@@ -23,5 +34,24 @@ router.post('/register', async (req, res) => {
 
 
 //Fetch users from db (Sign In account)
+router.post('/login', async (req, res) => {
+    try{
+        const {username, password} = req.body
+        const findUser = await schema.findOne({username, password})
+        if(!findUser || findUser.password !== password){
+            return res.status(401).json({message: 'Invalid Credentials'})
+        }
+        res.json({
+            findUser: {
+                username: findUser.username,
+                email: findUser.email
+            }
+        })
+    }
+    catch (err) {
+    res.status(500).json({ message: 'Server error', error: err.message });
+  }
+})
+
 
 module.exports = router
