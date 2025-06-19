@@ -9,8 +9,11 @@
 <body>
     <div id="topframe">
         <img src="https://i0.wp.com/bradspurgeon.com/wp-content/uploads/2014/07/f1-fanzone.jpg?ssl=1" alt="F1 fan zone" id="f1fanlogo">
-        <h1>F1 Fan Favorites Voting</h1>
-        <button type="button" class="sign-in-btn" onclick="navigateToSignIn()">Sign In</button>
+        <!-- <button type="button" class="sign-in-btn" onclick="window.location.href='signIn.html'">Sign In</button> -->
+        <div id="user-greeting-container" style="margin-left:auto;">
+            <button id="signInBtn" class="sign-in-btn" onclick="window.location.href='signIn.html'">Sign In</button>
+            <!-- Welcome message will be injected here -->
+        </div>
     </div>
     <div id="basicInfo">
         <h2>Welcome to the F1 Fan Favorites Voting Page! </h2>
@@ -21,5 +24,6 @@
     <div id="message">
     </div>
     <script src="script.js"></script>
+    <script src="usersScript.js"></script>
 </body>
 </html>
