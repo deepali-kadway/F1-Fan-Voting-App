@@ -1,6 +1,7 @@
 const express = require('express')
 const schema = require('../models/userschema')
 const router = express.Router()
+const bcrypt = require('bcrypt')
 
 //Add new users to db (Create account)
 router.post('/register', async (req, res) => {
@@ -24,6 +25,15 @@ router.post('/register', async (req, res) => {
             return res.status(409).json({ message: 'Username or email already exists' });
         }
 
+        const hashedPassword = await bcrypt.hash(req.body.password, 10)
+        const newUser = new schema({
+            username: req.body.username,
+            password: hashedPassword,
+            email: req.body.email,
+            fullname: req.body.fullname,
+            contact: req.body.contact,
+        });
+
         const savedUser = await newUser.save()
         res.status(201).json({message: 'Account Created Successfully'})
     }
@@ -37,8 +47,9 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
     try{
         const {username, password} = req.body
-        const findUser = await schema.findOne({username, password})
-        if(!findUser || findUser.password !== password){
+    //  const findUser = await schema.findOne({username, password})
+        const findUser = await schema.findOne({username})
+        if(!findUser || !(await bcrypt.compare(password, findUser.password))){
             return res.status(401).json({message: 'Invalid Credentials'})
         }
         res.json({

@@ -1,7 +1,5 @@
 window.onload = function() {
-    // ...existing vote button logic...
-
-    // Show welcome message or Sign In button
+       // Show welcome message or Sign In button
     const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
     const username = localStorage.getItem('username');
     const userGreetingContainer = document.getElementById('user-greeting-container');

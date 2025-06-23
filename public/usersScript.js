@@ -17,7 +17,7 @@ fetch('http://localhost:3002/users/register', {
         const data = await res.json();
         if (res.ok) {
             localStorage.setItem('isLoggedIn', 'true');
-            localStorage.setItem('username', username); // username variable from your form
+            localStorage.setItem('username', username); // username variable from form
             showRegisterModal('User has been created!');
         } else {
             showRegisterModal('Registration failed: ' + data.message);
